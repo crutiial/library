@@ -1854,7 +1854,7 @@ do
                     Tick.AnchorPoint = Vector2.new(0, 0.5)
                     Tick.BackgroundTransparency = 1.000
                     Tick.BorderSizePixel = 0
-                    Tick.Position = Title.AbsoluteSize.X <= 55 and UDim2.new(0, 59, 0.45, 0) or Title.AbsoluteSize.X > 55 and UDim2.new(0, Title.AbsoluteSize.X + 10, 0.45, 0)
+                    Tick.Position = Title.AbsoluteSize.X <= 50 and UDim2.new(0, 59, 0.45, 0) or Title.AbsoluteSize.X > 50 and UDim2.new(0, Title.AbsoluteSize.X + 10, 0.45, 0)
                     Tick.Size = UDim2.new(0, 12, 0, 12)
                     Dropdown.optionInstances[option].tick = Tick
                     
@@ -2127,6 +2127,7 @@ do
                 if not Keybind.binding then
                     Keycode.Text = "..."
                     TweenService:Create(Keycode, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Lib.Accent}):Play()
+                    Lib.Main.Interactable = false
 
                     Keybind.binding = Lib:Connection(
                         UserInputService.InputBegan,
@@ -2142,6 +2143,7 @@ do
                             task.wait()
                             Keybind.binding = nil
 
+                            Lib.Main.Interactable = true
                             TweenService:Create(Keycode, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = Color3.fromRGB(200,200,200)}):Play()
                         end
                     )
