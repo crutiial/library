@@ -1587,6 +1587,7 @@ do
                 state = args.state or nil,
                 callback = args.callback or function() end,
                 flag = args.flag or Lib.NextFlag(),
+                currentbiggest = 0,
                 optionInstances = {}
             }
 
@@ -1833,11 +1834,12 @@ do
                     Title.BorderSizePixel = 0
                     Title.Position = UDim2.new(0, 0, 0.5, 0)
                     Title.Size = UDim2.new(0, 0, 0, 10)
-                    Title.FontFace = Lib.Font
+                    Title.FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
                     Title.TextXAlignment = Enum.TextXAlignment.Left
                     Title.AutomaticSize = Enum.AutomaticSize.X
                     Title.Text = option
                     Title.ZIndex = 4
+                    Title.TextScaled = true
                     Title.TextColor3 = Color3.fromRGB(255, 255, 255)
                     Title.TextSize = Lib.FontSize
                     Dropdown.optionInstances[option].text = Title
@@ -1854,7 +1856,7 @@ do
                     Tick.AnchorPoint = Vector2.new(0, 0.5)
                     Tick.BackgroundTransparency = 1.000
                     Tick.BorderSizePixel = 0
-                    Tick.Position = Title.AbsoluteSize.X <= 50 and UDim2.new(0, 59, 0.45, 0) or Title.AbsoluteSize.X > 50 and UDim2.new(0, Title.AbsoluteSize.X + 10, 0.45, 0)
+                    Tick.Position = UDim2.new(0, 59, 0.45, 0)
                     Tick.Size = UDim2.new(0, 12, 0, 12)
                     Dropdown.optionInstances[option].tick = Tick
                     
