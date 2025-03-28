@@ -2064,6 +2064,7 @@ do
             UICorner.Parent = ToggleFrame
 
             local function set(newkey)
+                print(newkey)
                 if string.find(tostring(newkey), "Enum") then
                     if c then
                         c:Disconnect()
@@ -2133,9 +2134,9 @@ do
                             if gpe then return end
                             if input.UserInputType == Enum.UserInputType.Touch then return end
 
+                            print(input.UserInputType)
                             set(
-                                input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode or
-                                input.UserInputType
+                                input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode or input.UserInputType
                             )
 
                             Lib:Disconnection(Keybind.binding)
