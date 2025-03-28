@@ -1673,7 +1673,7 @@ do
             DropdownTitle.BackgroundTransparency = 1
             DropdownTitle.BorderSizePixel = 0
             DropdownTitle.Position = UDim2.new(0, 5, 0.5, 0)
-            DropdownTitle.Size = UDim2.new(0, 0, 0.5, 0)
+            DropdownTitle.Size = UDim2.new(0, 0, 0.65, 0)
             DropdownTitle.FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
             DropdownTitle.AutomaticSize = Enum.AutomaticSize.X
             DropdownTitle.TextScaled = true
@@ -1833,7 +1833,7 @@ do
                     Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
                     Title.BorderSizePixel = 0
                     Title.Position = UDim2.new(0, 0, 0.5, 0)
-                    Title.Size = UDim2.new(0, 0, 0, 10)
+                    Title.Size = UDim2.new(0, 40, 0, 12)
                     Title.FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
                     Title.TextXAlignment = Enum.TextXAlignment.Left
                     Title.AutomaticSize = Enum.AutomaticSize.X
