@@ -626,7 +626,9 @@ do
             if typeof(bool) == 'boolean' then
                 Lib.IsOpen = bool
                 if Lib.IsOpen then
-                    Lib.watermark.Interactable = true
+                    if Lib.watermark then
+                        Lib.watermark.Interactable = true
+                    end
                     Lib.Main.Interactable = true
                     Lib.Main.Visible = true
                     Lib.Blur.Enabled = true
@@ -658,7 +660,9 @@ do
                         end
                     end
                     task.wait(0.15)
-                    Lib.watermark.Interactable = false
+                    if Lib.watermark then
+                        Lib.watermark.Interactable = false
+                    end
                     Lib.Blur.Enabled = false
                     Lib.Main.Visible = false
                     Lib.Main.Interactable = false
