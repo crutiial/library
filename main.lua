@@ -1673,11 +1673,11 @@ do
             DropdownTitle.BorderSizePixel = 0
             DropdownTitle.Position = UDim2.new(0, 5, 0.5, 0)
             DropdownTitle.Size = UDim2.new(0, 0, 0.5, 0)
-            DropdownTitle.FontFace = Lib.Font
+            DropdownTitle.FontFace = Font.new("rbxassetid://11702779409", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
             DropdownTitle.AutomaticSize = Enum.AutomaticSize.X
+            DropdownTitle.TextScaled = true
             DropdownTitle.Text = ""
             DropdownTitle.TextColor3 = Color3.fromRGB(200, 200, 200)
-            DropdownTitle.TextSize = Lib.FontSize
             DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
 
             DropdownFrame.Name = "DropdownFrame"
@@ -1687,6 +1687,7 @@ do
             DropdownFrame.BorderSizePixel = 0
             DropdownFrame.Position = UDim2.new(0.5, 0, 1.15, 0)
             DropdownFrame.Size = UDim2.new(0, 84, 0, 0)
+            DropdownFrame.AutomaticSize = Enum.AutomaticSize.X
             DropdownFrame.ClipsDescendants = true
             DropdownFrame.ZIndex = 4
 
@@ -1853,7 +1854,7 @@ do
                     Tick.AnchorPoint = Vector2.new(0, 0.5)
                     Tick.BackgroundTransparency = 1.000
                     Tick.BorderSizePixel = 0
-                    Tick.Position = UDim2.new(0, 59, 0.45, 0)
+                    Tick.Position = Title.AbsoluteSize.X <= 55 and UDim2.new(0, 59, 0.45, 0) or Title.AbsoluteSize.X > 55 and UDim2.new(0, Title.AbsoluteSize.X + 10, 0.45, 0)
                     Tick.Size = UDim2.new(0, 12, 0, 12)
                     Dropdown.optionInstances[option].tick = Tick
                     
@@ -2064,7 +2065,6 @@ do
             UICorner.Parent = ToggleFrame
 
             local function set(newkey)
-                print(newkey)
                 if string.find(tostring(newkey), "Enum") then
                     if c then
                         c:Disconnect()
@@ -2076,7 +2076,7 @@ do
                     if tostring(newkey):find("Enum.Keycode.") then
                         newkey = Enum.KeyCode[tostring(newkey):gsub("Enum.KeyCode.", "")]
                     elseif tostring(newkey):find("Enum.UserInputType.") then
-                        newkey = Enum.KeyCode[tostring(newkey):gsub("Enum.UserInputType.", "")]
+                        newkey = Enum.UserInputType[tostring(newkey):gsub("Enum.UserInputType.", "")]
                     end
                     if newkey == Enum.KeyCode.Backspace then
                         Key = nil
@@ -2134,7 +2134,6 @@ do
                             if gpe then return end
                             if input.UserInputType == Enum.UserInputType.Touch then return end
 
-                            print(input.UserInputType)
                             set(
                                 input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode or input.UserInputType
                             )
