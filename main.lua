@@ -1284,11 +1284,11 @@ do
 
             ToggleFrame.Name = Toggle.name
             if Toggle.PRNT ~= nil then
-                task.spawn(function()
+                --task.spawn(function()
                     Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
                     ToggleFrame.Visible = false
                     ToggleFrame.Parent = Toggle.section.elements.Holder
-                end)
+                --end)
             else
                 ToggleFrame.Parent = Toggle.section.elements.Holder
             end
@@ -1474,11 +1474,11 @@ do
 
             NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
-                task.spawn(function()
+                --task.spawn(function()
                     Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
                     NewSlider.Visible = false
                     NewSlider.Parent = Slider.Section.elements.Holder
-                end)
+                --end)
             else
                 NewSlider.Parent = Slider.Section.elements.Holder
             end
@@ -1645,11 +1645,11 @@ do
 
             NewDropdown.Name = Dropdown.name
             if Dropdown.PRNT ~= nil then
-                task.spawn(function()
+                --task.spawn(function()
                     Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
                     NewDropdown.Visible = false
                     NewDropdown.Parent = Dropdown.section.elements.Holder
-                end)
+                --end)
             else
                 NewDropdown.Parent = Dropdown.section.elements.Holder
             end
@@ -2033,11 +2033,11 @@ do
 
             NewKeybind.Name = Keybind.name
             if Keybind.PRNT ~= nil then
-                task.spawn(function()
+                --task.spawn(function()
                     Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
                     NewKeybind.Visible = false
                     NewKeybind.Parent = Keybind.section.elements.Holder
-                end)
+                --end)
             else
                 NewKeybind.Parent = Keybind.section.elements.Holder
             end
