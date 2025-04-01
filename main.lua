@@ -1257,7 +1257,8 @@ do
                     args.flag or Lib.NextFlag()
                 ),
                 Toggled = false,
-                Main = nil
+                Main = nil,
+                PRNT = args.prnt or nil
             }
 
             local Colorpicker = {
@@ -1282,6 +1283,9 @@ do
             local UICorner_2 = Instance.new("UICorner")
 
             ToggleFrame.Name = "ToggleFrame"
+            if Toggle.PRNT ~= nil then
+                Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT.Name)
+            end
             ToggleFrame.Parent = Toggle.section.elements.Holder
             ToggleFrame.BackgroundTransparency = 1
             ToggleFrame.BorderSizePixel = 0
@@ -1449,7 +1453,8 @@ do
                 Decimals = args.decimals or 1,
                 callback = args.callback or function()end,
                 flag = args.flag or Lib.NextFlag(),
-                Main = nil
+                Main = nil,
+                PRNT = args.prnt or nil
             }
             local TextValue = ("[value]" .. Slider.Sub)
 
@@ -1463,6 +1468,9 @@ do
             local UICorner = Instance.new("UICorner")
 
             NewSlider.Name = "NewSlider"
+            if Slider.PRNT ~= nil then
+                Slider.section.elements.Holder:WaitForChild(Slider.PRNT.Name)
+            end
             NewSlider.Parent = Slider.Section.elements.Holder
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
@@ -1606,7 +1614,8 @@ do
                 flag = args.flag or Lib.NextFlag(),
                 currentbiggest = 0,
                 optionInstances = {},
-                Main = nil
+                Main = nil,
+                PRNT = args.prnt or nil
             }
 
             local NewDropdown = Instance.new("Frame")
@@ -1625,6 +1634,9 @@ do
             local UIPadding_2 = Instance.new("UIPadding")
 
             NewDropdown.Name = "NewDropdown"
+            if Dropdown.PRNT ~= nil then
+                Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT.Name)
+            end
             NewDropdown.Parent = Dropdown.section.elements.Holder
             NewDropdown.BackgroundTransparency = 1
             NewDropdown.BorderSizePixel = 0
@@ -1987,7 +1999,8 @@ do
                 useKey = args.usekey or false,
                 callback = args.callback or function() end,
                 binding = nil,
-                Main = nil
+                Main = nil,
+                PRNT = args.prnt or nil
             }
 
             local Key
@@ -2004,6 +2017,9 @@ do
             local UICorner = Instance.new("UICorner")
 
             NewKeybind.Name = "NewKeybind"
+            if Keybind.PRNT ~= nil then
+                Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT.Name)
+            end
             NewKeybind.Parent = Keybind.section.elements.Holder
             NewKeybind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             NewKeybind.BackgroundTransparency = 1.000
