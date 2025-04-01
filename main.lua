@@ -1284,11 +1284,8 @@ do
 
             ToggleFrame.Name = Toggle.name
             if Toggle.PRNT ~= nil then
-                --task.spawn(function()
-                    Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
-                    ToggleFrame.Visible = false
-                    ToggleFrame.Parent = Toggle.section.elements.Holder
-                --end)
+                ToggleFrame.Visible = false
+                ToggleFrame.Parent = Toggle.section.elements.Holder
             else
                 ToggleFrame.Parent = Toggle.section.elements.Holder
             end
@@ -1381,8 +1378,8 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255,255,255)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0)}):Play()
                     for i, v in Toggle.Other do
-                        if v then
-                            v.Main.Visible = true
+                        if v and Toggle.section.elements.Holder:FindFirstChild(v) then
+                            Toggle.section.elements.Holder:FindFirstChild(v).Main.Visible = true
                         end
                     end
                 else
@@ -1390,8 +1387,8 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, 0, 0)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
                     for i, v in Toggle.Other do
-                        if v then
-                            v.Main.Visible = false
+                        if v and Toggle.section.elements.Holder:FindFirstChild(v) then
+                            Toggle.section.elements.Holder:FindFirstChild(v).Main.Visible = false
                         end
                     end
                 end
@@ -1474,11 +1471,8 @@ do
 
             NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
-                --task.spawn(function()
-                    Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
-                    NewSlider.Visible = false
-                    NewSlider.Parent = Slider.Section.elements.Holder
-                --end)
+                NewSlider.Visible = false
+                NewSlider.Parent = Slider.Section.elements.Holder
             else
                 NewSlider.Parent = Slider.Section.elements.Holder
             end
@@ -1645,11 +1639,8 @@ do
 
             NewDropdown.Name = Dropdown.name
             if Dropdown.PRNT ~= nil then
-                --task.spawn(function()
-                    Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
-                    NewDropdown.Visible = false
-                    NewDropdown.Parent = Dropdown.section.elements.Holder
-                --end)
+                NewDropdown.Visible = false
+                NewDropdown.Parent = Dropdown.section.elements.Holder
             else
                 NewDropdown.Parent = Dropdown.section.elements.Holder
             end
@@ -2033,11 +2024,8 @@ do
 
             NewKeybind.Name = Keybind.name
             if Keybind.PRNT ~= nil then
-                --task.spawn(function()
-                    Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
-                    NewKeybind.Visible = false
-                    NewKeybind.Parent = Keybind.section.elements.Holder
-                --end)
+                NewKeybind.Visible = false
+                NewKeybind.Parent = Keybind.section.elements.Holder
             else
                 NewKeybind.Parent = Keybind.section.elements.Holder
             end
