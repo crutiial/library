@@ -1379,7 +1379,7 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0)}):Play()
                     for i, v in Toggle.Other do
                         if v and Toggle.section.elements.Holder:FindFirstChild(v) then
-                            Toggle.section.elements.Holder:FindFirstChild(v).Main.Visible = true
+                            Toggle.section.elements.Holder:FindFirstChild(v).Visible = true
                         end
                     end
                 else
@@ -1388,7 +1388,7 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
                     for i, v in Toggle.Other do
                         if v and Toggle.section.elements.Holder:FindFirstChild(v) then
-                            Toggle.section.elements.Holder:FindFirstChild(v).Main.Visible = false
+                            Toggle.section.elements.Holder:FindFirstChild(v).Visible = false
                         end
                     end
                 end
