@@ -1288,6 +1288,8 @@ do
                     Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
                     ToggleFrame.Parent = Toggle.section.elements.Holder
                 end)
+            else
+                ToggleFrame.Parent = Toggle.section.elements.Holder
             end
             ToggleFrame.BackgroundTransparency = 1
             ToggleFrame.BorderSizePixel = 0
@@ -1475,6 +1477,8 @@ do
                     Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
                     NewSlider.Parent = Slider.Section.elements.Holder
                 end)
+            else
+                NewSlider.Parent = Slider.Section.elements.Holder
             end
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
@@ -1643,6 +1647,8 @@ do
                     Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
                     NewDropdown.Parent = Dropdown.section.elements.Holder
                 end)
+            else
+                NewDropdown.Parent = Dropdown.section.elements.Holder
             end
             NewDropdown.BackgroundTransparency = 1
             NewDropdown.BorderSizePixel = 0
@@ -2028,6 +2034,8 @@ do
                     Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
                     NewKeybind.Parent = Keybind.section.elements.Holder
                 end)
+            else
+                NewKeybind.Parent = Keybind.section.elements.Holder
             end
             NewKeybind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             NewKeybind.BackgroundTransparency = 1.000
