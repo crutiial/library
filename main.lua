@@ -1533,7 +1533,7 @@ do
 
                 local sizeX = (value - Slider.Min) / (Slider.Max - Slider.Min)
                 TweenService:Create(Fill, TweenInfo.new(0.05, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(sizeX, 0, 1, 0)}):Play()
-                Value.Text = TextValue:gsub("%[value%]", string.format("%.14g", value).. Slider.coolval)
+                Value.Text = TextValue:gsub("%[value%]", string.format("%.14g", value).. " " .. Slider.coolval)
                 Val = value
 
                 Lib.Flags[Slider.flag] = value
