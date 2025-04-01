@@ -1469,7 +1469,7 @@ do
 
             NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
-                Slider.section.elements.Holder:WaitForChild(Slider.PRNT)
+                Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
             end
             NewSlider.Parent = Slider.Section.elements.Holder
             NewSlider.BackgroundTransparency = 1
