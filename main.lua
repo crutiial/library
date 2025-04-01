@@ -1284,7 +1284,9 @@ do
 
             ToggleFrame.Name = Toggle.name
             if Toggle.PRNT ~= nil then
-                Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
+                task.spawn(function()
+                    Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
+                end)
             end
             ToggleFrame.Parent = Toggle.section.elements.Holder
             ToggleFrame.BackgroundTransparency = 1
@@ -1469,7 +1471,9 @@ do
 
             NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
-                Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
+                task.spawn(function()
+                    Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
+                end)
             end
             NewSlider.Parent = Slider.Section.elements.Holder
             NewSlider.BackgroundTransparency = 1
@@ -1635,7 +1639,9 @@ do
 
             NewDropdown.Name = Dropdown.name
             if Dropdown.PRNT ~= nil then
-                Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
+                task.spawn(function()
+                    Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
+                end)
             end
             NewDropdown.Parent = Dropdown.section.elements.Holder
             NewDropdown.BackgroundTransparency = 1
@@ -2018,7 +2024,9 @@ do
 
             NewKeybind.Name = Keybind.name
             if Keybind.PRNT ~= nil then
-                Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
+                task.spawn(function()
+                    Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
+                end)
             end
             NewKeybind.Parent = Keybind.section.elements.Holder
             NewKeybind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
