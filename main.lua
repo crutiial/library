@@ -1286,6 +1286,7 @@ do
             if Toggle.PRNT ~= nil then
                 task.spawn(function()
                     Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
+                    ToggleFrame.Visible = false
                     ToggleFrame.Parent = Toggle.section.elements.Holder
                 end)
             else
@@ -1475,6 +1476,7 @@ do
             if Slider.PRNT ~= nil then
                 task.spawn(function()
                     Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
+                    NewSlider.Visible = false
                     NewSlider.Parent = Slider.Section.elements.Holder
                 end)
             else
@@ -1645,6 +1647,7 @@ do
             if Dropdown.PRNT ~= nil then
                 task.spawn(function()
                     Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
+                    NewDropdown.Visible = false
                     NewDropdown.Parent = Dropdown.section.elements.Holder
                 end)
             else
@@ -2032,6 +2035,7 @@ do
             if Keybind.PRNT ~= nil then
                 task.spawn(function()
                     Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
+                    NewKeybind.Visible = false
                     NewKeybind.Parent = Keybind.section.elements.Holder
                 end)
             else
