@@ -1246,7 +1246,7 @@ do
                 name = args.name or "Toggle",
                 desc = args.desc or "",
                 isColored = args.color or false,
-                Other = {},
+                Other = args.other or {},
                 state = (
                     args.state or args.State or args.default or false
                 ),
@@ -1372,14 +1372,18 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255,255,255)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0)}):Play()
                     for i, v in Toggle.Other do
-                        v.Main.Visible = true
+                        if v then
+                            v.Main.Visible = true
+                        end
                     end
                 else
                     TweenService:Create(ToggleButton, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(70,70,70)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, 0, 0)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
                     for i, v in Toggle.Other do
-                        v.Main.Visible = false
+                        if v then
+                            v.Main.Visible = false
+                        end
                     end
                 end
                 Lib.Flags[Toggle.flag] = Toggle.Toggled
