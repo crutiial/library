@@ -1282,7 +1282,7 @@ do
             local UICorner = Instance.new("UICorner")
             local UICorner_2 = Instance.new("UICorner")
 
-            ToggleFrame.Name = "ToggleFrame"
+            ToggleFrame.Name = Toggle.name
             if Toggle.PRNT ~= nil then
                 Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
             end
@@ -1467,7 +1467,7 @@ do
             local Circle = Instance.new("TextButton")
             local UICorner = Instance.new("UICorner")
 
-            NewSlider.Name = "NewSlider"
+            NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
                 Slider.section.elements.Holder:WaitForChild(Slider.PRNT)
             end
@@ -1633,7 +1633,7 @@ do
             local UIListLayout = Instance.new("UIListLayout")
             local UIPadding_2 = Instance.new("UIPadding")
 
-            NewDropdown.Name = "NewDropdown"
+            NewDropdown.Name = Dropdown.name
             if Dropdown.PRNT ~= nil then
                 Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
             end
@@ -2016,7 +2016,7 @@ do
             local Keycode = Instance.new("TextLabel")
             local UICorner = Instance.new("UICorner")
 
-            NewKeybind.Name = "NewKeybind"
+            NewKeybind.Name = Keybind.name
             if Keybind.PRNT ~= nil then
                 Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
             end
