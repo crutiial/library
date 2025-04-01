@@ -1246,6 +1246,7 @@ do
                 name = args.name or "Toggle",
                 desc = args.desc or "",
                 isColored = args.color or false,
+                Other = {},
                 state = (
                     args.state or args.State or args.default or false
                 ),
@@ -1255,7 +1256,8 @@ do
                 flag = (
                     args.flag or Lib.NextFlag()
                 ),
-                Toggled = false
+                Toggled = false,
+                Main = nil
             }
 
             local Colorpicker = {
@@ -1286,6 +1288,8 @@ do
             ToggleFrame.TextTransparency = 1
             ToggleFrame.AutoButtonColor = false
             ToggleFrame.Size = UDim2.new(1, 0, 0, 28)
+
+            Toggle.Main = ToggleFrame
 
             if Toggle.isColored == true then
                 Colorpicker.colorpickers = Colorpicker.colorpickers + 1
@@ -1367,10 +1371,16 @@ do
                     TweenService:Create(ToggleButton, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Lib.Accent}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255,255,255)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0)}):Play()
+                    for i, v in Toggle.Other do
+                        v.Main.Visible = true
+                    end
                 else
                     TweenService:Create(ToggleButton, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(70,70,70)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, 0, 0)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
+                    for i, v in Toggle.Other do
+                        v.Main.Visible = false
+                    end
                 end
                 Lib.Flags[Toggle.flag] = Toggle.Toggled
                 Toggle.callback(Toggle.Toggled)
@@ -1434,7 +1444,8 @@ do
                 Sub = args.sub or "",
                 Decimals = args.decimals or 1,
                 callback = args.callback or function()end,
-                flag = args.flag or Lib.NextFlag()
+                flag = args.flag or Lib.NextFlag(),
+                Main = nil
             }
             local TextValue = ("[value]" .. Slider.Sub)
 
@@ -1452,6 +1463,8 @@ do
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
             NewSlider.Size = UDim2.new(1, 0, 0, 28)
+
+            Slider.Main = NewSlider
 
             Title.Name = "Title"
             Title.AutomaticSize = Enum.AutomaticSize.X
@@ -1588,7 +1601,8 @@ do
                 callback = args.callback or function() end,
                 flag = args.flag or Lib.NextFlag(),
                 currentbiggest = 0,
-                optionInstances = {}
+                optionInstances = {},
+                Main = nil
             }
 
             local NewDropdown = Instance.new("Frame")
@@ -1612,6 +1626,8 @@ do
             NewDropdown.BorderSizePixel = 0
             NewDropdown.ZIndex = 512
             NewDropdown.Size = UDim2.new(1, 0, 0, 28)
+
+            Dropdown.Main = NewDropdown
 
             Title.Name = "Title"
             Title.Parent = NewDropdown
@@ -1966,7 +1982,8 @@ do
                 mode = args.mode or "Toggle",
                 useKey = args.usekey or false,
                 callback = args.callback or function() end,
-                binding = nil
+                binding = nil,
+                Main = nil
             }
 
             local Key
@@ -1989,6 +2006,8 @@ do
             NewKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
             NewKeybind.BorderSizePixel = 0
             NewKeybind.Size = UDim2.new(1, 0, 0, 28)
+
+            Keybind.Main = NewKeybind
 
             Desc.Name = "Desc"
             Desc.Parent = NewKeybind
