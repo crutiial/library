@@ -1286,9 +1286,9 @@ do
             if Toggle.PRNT ~= nil then
                 task.spawn(function()
                     Toggle.section.elements.Holder:WaitForChild(Toggle.PRNT)
+                    ToggleFrame.Parent = Toggle.section.elements.Holder
                 end)
             end
-            ToggleFrame.Parent = Toggle.section.elements.Holder
             ToggleFrame.BackgroundTransparency = 1
             ToggleFrame.BorderSizePixel = 0
             ToggleFrame.TextTransparency = 1
@@ -1473,9 +1473,9 @@ do
             if Slider.PRNT ~= nil then
                 task.spawn(function()
                     Slider.Section.elements.Holder:WaitForChild(Slider.PRNT)
+                    NewSlider.Parent = Slider.Section.elements.Holder
                 end)
             end
-            NewSlider.Parent = Slider.Section.elements.Holder
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
             NewSlider.Size = UDim2.new(1, 0, 0, 28)
@@ -1641,9 +1641,9 @@ do
             if Dropdown.PRNT ~= nil then
                 task.spawn(function()
                     Dropdown.section.elements.Holder:WaitForChild(Dropdown.PRNT)
+                    NewDropdown.Parent = Dropdown.section.elements.Holder
                 end)
             end
-            NewDropdown.Parent = Dropdown.section.elements.Holder
             NewDropdown.BackgroundTransparency = 1
             NewDropdown.BorderSizePixel = 0
             NewDropdown.ZIndex = 512
@@ -2026,9 +2026,9 @@ do
             if Keybind.PRNT ~= nil then
                 task.spawn(function()
                     Keybind.section.elements.Holder:WaitForChild(Keybind.PRNT)
+                    NewKeybind.Parent = Keybind.section.elements.Holder
                 end)
             end
-            NewKeybind.Parent = Keybind.section.elements.Holder
             NewKeybind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             NewKeybind.BackgroundTransparency = 1.000
             NewKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
