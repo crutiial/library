@@ -1092,7 +1092,7 @@ do
             LeftPadding.Name = "LeftPadding"
             LeftPadding.PaddingLeft = UDim.new(0,2)
             LeftPadding.PaddingTop = UDim.new(0,5)
-            LeftPadding.PaddingBottom = UDim.new(0, 2)
+            LeftPadding.PaddingBottom = UDim.new(0, 30)
             LeftPadding.Parent = Left
 
             LeftLayout.Name = "LeftLayout"
@@ -1110,7 +1110,7 @@ do
             RightPadding.Name = "RightPadding"
             RightPadding.PaddingRight = UDim.new(0,2)
             RightPadding.PaddingTop = UDim.new(0,5)
-            RightPadding.PaddingBottom = UDim.new(0, 2)
+            RightPadding.PaddingBottom = UDim.new(0, 30)
             RightPadding.Parent = Right
 
             RightLayout.Name = "RightLayout"
