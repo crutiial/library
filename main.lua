@@ -1394,6 +1394,9 @@ do
                             if childobjchild then
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
                                 task.wait(0.1)
+                                if childobjchild:FindFirstChild("ToggleFrame"):FindFirstChild("DropdownFrame") then
+                                    childobj.ClipsDescendants = false
+                                end
                             end
                         end
                     end
@@ -1406,6 +1409,9 @@ do
                         if v and childobj then
                             local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
                             if childobjchild then
+                                if childobjchild:FindFirstChild("ToggleFrame"):FindFirstChild("DropdownFrame") then
+                                    childobj.ClipsDescendants = true
+                                end
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,-1,0)}):Play()
                                 task.wait(0.15)
                                 childobj.Visible = false
