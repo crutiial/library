@@ -1297,7 +1297,7 @@ do
                 ToggleFrame.Size = UDim2.new(1,0,1,0)
             else
                 ToggleFrame.Parent = Toggle.section.elements.Holder
-                ToggleFrame.Size = UDim2.new(1,0,28,0)
+                ToggleFrame.Size = UDim2.new(1,0,0,28)
             end
             ToggleFrame.BackgroundTransparency = 1
             ToggleFrame.BorderSizePixel = 0
