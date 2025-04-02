@@ -1294,14 +1294,15 @@ do
                 HolderFrame.Size = UDim2.new(1, 0, 0, 28)
                 ToggleFrame.Parent = HolderFrame
                 ToggleFrame.Position = UDim2.new(0,0,-1,0)
+                ToggleFrame.Size = UDim2.new(1,0,1,0)
             else
                 ToggleFrame.Parent = Toggle.section.elements.Holder
+                ToggleFrame.Size = UDim2.new(1,0,28,0)
             end
             ToggleFrame.BackgroundTransparency = 1
             ToggleFrame.BorderSizePixel = 0
             ToggleFrame.TextTransparency = 1
             ToggleFrame.AutoButtonColor = false
-            ToggleFrame.Size = UDim2.new(1,0,1,0)
 
             Toggle.Main = ToggleFrame
 
@@ -1499,12 +1500,13 @@ do
                 HolderFrame.Size = UDim2.new(1, 0, 0, 28)
                 NewSlider.Parent = HolderFrame
                 NewSlider.Position = UDim2.new(0,0,-1,0)
+                NewSlider.Size = UDim2.new(1,0,1,0)
             else
                 NewSlider.Parent = Slider.Section.elements.Holder
+                NewSlider.Size = UDim2.new(1,0,0,28)
             end
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
-            NewSlider.Size = UDim2.new(1,0,1,0)
 
             Slider.Main = NewSlider
 
@@ -1675,13 +1677,14 @@ do
                 HolderFrame.Size = UDim2.new(1, 0, 0, 28)
                 NewDropdown.Parent = HolderFrame
                 NewDropdown.Position = UDim2.new(0,0,-1,0)
+                NewDropdown.Size = UDim2.new(1,0, 1, 0)
             else
                 NewDropdown.Parent = Dropdown.section.elements.Holder
+                NewDropdown.Size = UDim2.new(1,0,0, 28)
             end
             NewDropdown.BackgroundTransparency = 1
             NewDropdown.BorderSizePixel = 0
             NewDropdown.ZIndex = 512
-            NewDropdown.Size = UDim2.new(1,0,1,0)
 
             Dropdown.Main = NewDropdown
 
@@ -2067,14 +2070,15 @@ do
                 HolderFrame.Size = UDim2.new(1, 0, 0, 28)
                 NewKeybind.Parent = HolderFrame
                 NewKeybind.Position = UDim2.new(0,0,-1,0)
+                NewKeybind.Size = UDim2.new(1,0,1,0)
             else
                 NewKeybind.Parent = Keybind.section.elements.Holder
+                NewKeybind.Size = UDim2.new(1,0,0,28)
             end
             NewKeybind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             NewKeybind.BackgroundTransparency = 1.000
             NewKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
             NewKeybind.BorderSizePixel = 0
-            NewKeybind.Size = UDim2.new(1,0,1,0)
 
             Keybind.Main = NewKeybind
 
