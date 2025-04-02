@@ -1256,8 +1256,8 @@ do
                 flag = (
                     args.flag or Lib.NextFlag()
                 ),
-                Toggled = false,
                 Main = nil,
+                Toggled = false,
                 PRNT = args.prnt or nil
             }
 
@@ -1284,8 +1284,16 @@ do
 
             ToggleFrame.Name = Toggle.name
             if Toggle.PRNT ~= nil then
-                ToggleFrame.Visible = false
-                ToggleFrame.Parent = Toggle.section.elements.Holder
+                local HolderFrame = Instance.new("Frame")
+                HolderFrame.Visible = false
+                HolderFrame.Name = Toggle.name
+                HolderFrame.Parent = Toggle.section.elements.Holder
+                HolderFrame.ClipsDescendants = true
+                HolderFrame.BackgroundTransparency = 1
+                HolderFrame.BorderSizePixel = 0
+                HolderFrame.Size = UDim2.new(1, 0, 0, 28)
+                ToggleFrame.Parent = HolderFrame
+                ToggleFrame.Position = UDim2.new(0,0,-1,0)
             else
                 ToggleFrame.Parent = Toggle.section.elements.Holder
             end
@@ -1293,7 +1301,7 @@ do
             ToggleFrame.BorderSizePixel = 0
             ToggleFrame.TextTransparency = 1
             ToggleFrame.AutoButtonColor = false
-            ToggleFrame.Size = UDim2.new(1, 0, 0, 28)
+            ToggleFrame.Size = UDim2.new(1,0,1,0)
 
             Toggle.Main = ToggleFrame
 
@@ -1378,8 +1386,13 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255,255,255)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, 0, 0)}):Play()
                     for i, v in Toggle.Other do
-                        if v and Toggle.section.elements.Holder:FindFirstChild(v) then
-                            Toggle.section.elements.Holder:FindFirstChild(v).Visible = true
+                        local childobj = Toggle.section.elements.Holder:FindFirstChild(v)
+                        if v and childobj then
+                            childobj.Visible = true
+                            local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
+                            if childobjchild then
+                                TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
+                            end
                         end
                     end
                 else
@@ -1387,8 +1400,13 @@ do
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0, 0, 0, 0)}):Play()
                     TweenService:Create(Circle, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(150,150,150)}):Play()
                     for i, v in Toggle.Other do
-                        if v and Toggle.section.elements.Holder:FindFirstChild(v) then
-                            Toggle.section.elements.Holder:FindFirstChild(v).Visible = false
+                        local childobj = Toggle.section.elements.Holder:FindFirstChild(v)
+                        if v and childobj then
+                            childobj.Visible = false
+                            local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
+                            if childobjchild then
+                                TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,-1,0)}):Play()
+                            end
                         end
                     end
                 end
@@ -1471,14 +1489,22 @@ do
 
             NewSlider.Name = Slider.name
             if Slider.PRNT ~= nil then
-                NewSlider.Visible = false
-                NewSlider.Parent = Slider.Section.elements.Holder
+                local HolderFrame = Instance.new("Frame")
+                HolderFrame.Name = Slider.name
+                HolderFrame.Visible = false
+                HolderFrame.Parent = Slider.Section.elements.Holder
+                HolderFrame.ClipsDescendants = true
+                HolderFrame.BackgroundTransparency = 1
+                HolderFrame.BorderSizePixel = 0
+                HolderFrame.Size = UDim2.new(1, 0, 0, 28)
+                NewSlider.Parent = HolderFrame
+                NewSlider.Position = UDim2.new(0,0,-1,0)
             else
                 NewSlider.Parent = Slider.Section.elements.Holder
             end
             NewSlider.BackgroundTransparency = 1
             NewSlider.BorderSizePixel = 0
-            NewSlider.Size = UDim2.new(1, 0, 0, 28)
+            NewSlider.Size = UDim2.new(1,0,1,0)
 
             Slider.Main = NewSlider
 
@@ -1639,15 +1665,23 @@ do
 
             NewDropdown.Name = Dropdown.name
             if Dropdown.PRNT ~= nil then
-                NewDropdown.Visible = false
-                NewDropdown.Parent = Dropdown.section.elements.Holder
+                local HolderFrame = Instance.new("Frame")
+                HolderFrame.Name = Dropdown.name
+                HolderFrame.Visible = false
+                HolderFrame.Parent = Dropdown.section.elements.Holder
+                HolderFrame.ClipsDescendants = true
+                HolderFrame.BackgroundTransparency = 1
+                HolderFrame.BorderSizePixel = 0
+                HolderFrame.Size = UDim2.new(1, 0, 0, 28)
+                NewDropdown.Parent = HolderFrame
+                NewDropdown.Position = UDim2.new(0,0,-1,0)
             else
                 NewDropdown.Parent = Dropdown.section.elements.Holder
             end
             NewDropdown.BackgroundTransparency = 1
             NewDropdown.BorderSizePixel = 0
             NewDropdown.ZIndex = 512
-            NewDropdown.Size = UDim2.new(1, 0, 0, 28)
+            NewDropdown.Size = UDim2.new(1,0,1,0)
 
             Dropdown.Main = NewDropdown
 
@@ -2023,8 +2057,16 @@ do
 
             NewKeybind.Name = Keybind.name
             if Keybind.PRNT ~= nil then
-                NewKeybind.Visible = false
-                NewKeybind.Parent = Keybind.section.elements.Holder
+                local HolderFrame = Instance.new("Frame")
+                HolderFrame.Name = Keybind.name
+                HolderFrame.Visible = false
+                HolderFrame.Parent = Keybind.section.elements.Holder
+                HolderFrame.ClipsDescendants = true
+                HolderFrame.BackgroundTransparency = 1
+                HolderFrame.BorderSizePixel = 0
+                HolderFrame.Size = UDim2.new(1, 0, 0, 28)
+                NewKeybind.Parent = HolderFrame
+                NewKeybind.Position = UDim2.new(0,0,-1,0)
             else
                 NewKeybind.Parent = Keybind.section.elements.Holder
             end
@@ -2032,7 +2074,7 @@ do
             NewKeybind.BackgroundTransparency = 1.000
             NewKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
             NewKeybind.BorderSizePixel = 0
-            NewKeybind.Size = UDim2.new(1, 0, 0, 28)
+            NewKeybind.Size = UDim2.new(1,0,1,0)
 
             Keybind.Main = NewKeybind
 
