@@ -1393,7 +1393,7 @@ do
                             local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
                             if childobjchild then
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
-                                task.wait(0.25)
+                                task.wait(0.1)
                             end
                         end
                     end
@@ -1407,7 +1407,7 @@ do
                             local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
                             if childobjchild then
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,-1,0)}):Play()
-                                task.wait(0.25)
+                                task.wait(0.15)
                                 childobj.Visible = false
                             end
                         end
