@@ -1393,6 +1393,7 @@ do
                             local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
                             if childobjchild then
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,0,0)}):Play()
+                                task.wait(0.1)
                             end
                         end
                     end
@@ -1403,10 +1404,11 @@ do
                     for i, v in Toggle.Other do
                         local childobj = Toggle.section.elements.Holder:FindFirstChild(v)
                         if v and childobj then
-                            childobj.Visible = false
                             local childobjchild = childobj:FindFirstChildWhichIsA("Frame") or childobj:FindFirstChildWhichIsA("TextButton")
                             if childobjchild then
                                 TweenService:Create(childobjchild, TweenInfo.new(0.35, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Position = UDim2.new(0,0,-1,0)}):Play()
+                                task.wait(0.1)
+                                childobj.Visible = false
                             end
                         end
                     end
