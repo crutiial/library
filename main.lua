@@ -1677,6 +1677,7 @@ do
                 HolderFrame.BackgroundTransparency = 1
                 HolderFrame.BorderSizePixel = 0
                 HolderFrame.Size = UDim2.new(1, 0, 0, 28)
+                HolderFrame.ZIndex = 512
                 NewDropdown.Parent = HolderFrame
                 NewDropdown.Position = UDim2.new(0,0,-1,0)
                 NewDropdown.Size = UDim2.new(1,0, 1, 0)
